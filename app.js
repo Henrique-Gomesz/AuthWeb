@@ -28,3 +28,5 @@ mongoose
     console.log("Conectou ao banco");
   })
   .catch((err) => console.log(err));
+
+module.exports = app
