@@ -12,4 +12,4 @@ Basic node MVC structure using express.js with JWT deployed in vercel.
 
 ## How to run?
 - npm install
-- npm devstart
+- npm run devstart
