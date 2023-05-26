@@ -4,14 +4,16 @@ const mongoose = require("mongoose");
 const app = express();
 const userRouter = require("./src/routes/user-routes");
 const loginRouter = require("./src/routes/login-routes");
+const championshipRouter = require("./src/routes/championship-routes");
 const applicationMiddleware = require("./src/utils/middleware");
 // Allow express read json
 app.use(express.json());
 
 // Application routes
 app.get("/", (req, res) => {
-  res.status(200).json({ msg: "teste" });
+  res.status(200).json({ msg: "working" });
 });
+app.use("/championship", championshipRouter);
 app.use("/user", userRouter);
 app.use("/login", applicationMiddleware.checkToken, loginRouter);
 
@@ -29,4 +31,4 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-module.exports = app
+module.exports = app;
